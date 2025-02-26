@@ -31,17 +31,17 @@ Rscript alleleDoser.R \
 
 ## Inputs
 The script requires **seven command-line arguments**:
-1. **Germline in tumor genotype TSV file**: Variant count table.
-2. **Segment file**: CNV data with major/minor allele copy numbers.
-3. **Metadata file**: Contains tumor purity and other sample-specific information.
-4. **Output directory**: Path where the results will be saved.
-5. **Patient ID**: Identifier to filter data for the patient of interest.
-6. **Normal sample IDs TXT file**: List of normal samples to reference allele frequencies.
-7. **Phased genotypes BCF file**: Contains phased genotype information.
+1. Germline in tumor genotype
+2. Segment file
+3. Metadata file
+4. Output directory
+5. Patient ID
+6. Normal sample IDs
+7. Phased genotypes
 
 ### Input File Descriptions
 
-#### 1. Germline in Tumor Genotype (TSV)
+#### 1. Germline in Tumor Genotype File (TSV)
 
 You can generate the input TSV file from your VCF file using the following **GATK command**:
 
