@@ -30,7 +30,7 @@ Rscript -e "install.packages(c('tidyverse', 'Rsamtools'))"
 Run the script as follows:
 ```bash
 Rscript alleleDoser.R \
-  path/to/germline_variants.csv \
+  path/to/germline_variants.tsv \
   path/to/segment_file.txt \
   path/to/metadata.txt \
   path/to/output_directory \
