@@ -19,7 +19,7 @@ The script requires **seven command-line arguments**:
 Clone the repository and ensure you have the necessary R packages:
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/germline-variant-analysis.git
+git clone https://github.com/HautaniemiLab/AlleleDoser.git
 cd germline-variant-analysis
 
 # Install required R packages (if not already installed)
