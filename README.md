@@ -40,12 +40,44 @@ Rscript alleleDoser.R \
 ```
 
 ## Output
-The script generates a CSV file named `<patientID>.csv` in the specified output directory. The output includes:
-- Chromosome and position information
-- Reference and alternate alleles
-- Calculated allele frequencies and dosages
-- Copy number states and purity adjustments
-- Phased genotype segmentation
+The script generates a CSV file named `<patientID>.csv` in the specified output directory.
+
+### Output Column Descriptions
+
+| **Column**               | **Description**                                                                 |
+|--------------------------|---------------------------------------------------------------------------------|
+| `sample`                 | Sample ID.                                                                     |
+| `CHROM`                  | Chromosome identifier.                                                          |
+| `POS`                    | Genomic position of the variant.                                                |
+| `REF`                    | Reference allele.                                                               |
+| `ALT`                    | Alternate allele.                                                               |
+| `Mutation`               | Combined variant notation (`CHROM:POSREF>ALT`).                                 |
+| `AD.0`                   | Reference allele read count.                                                     |
+| `AD.1`                   | Alternate allele read count.                                                     |
+| `DP`                     | Total read depth (`AD.0 + AD.1`).                                                |
+| `AF`                     | Allele frequency of the alternate allele (`AD.1 / DP`).                         |
+| `purity`                 | Tumor purity from the metadata file.                                             |
+| `nMajor`                 | Major allele copy number.                                                        |
+| `nMinor`                 | Minor allele copy number.                                                        |
+| `totalCN`                | Total copy number (`nMajor + nMinor`).                                           |
+| `expMajorAF`             | Expected alternate allele frequency if the major allele is mutated.              |
+| `expMajorCI.lo`          | Lower bound of the 95% confidence interval for `expMajorAF`.                     |
+| `expMajorCI.hi`          | Upper bound of the 95% confidence interval for `expMajorAF`.                     |
+| `expMajor.pbinom.extreme`| Probability of observing the alternate allele count or more extreme under the major allele hypothesis. |
+| `expMinorAF`             | Expected alternate allele frequency if the minor allele is mutated.              |
+| `expMinorCI.lo`          | Lower bound of the 95% confidence interval for `expMinorAF`.                     |
+| `expMinorCI.hi`          | Upper bound of the 95% confidence interval for `expMinorAF`.                     |
+| `expMinor.pbinom.extreme`| Probability of observing the alternate allele count or more extreme under the minor allele hypothesis. |
+| `ALTallele`              | Preliminary classification of which allele (major or minor) carries the mutation.|
+| `normal.AD.0`            | Reference allele read count in normal samples.                                  |
+| `GT`                     | Phased genotype.                                            |
+| `germline`               | Germline status classification (`0homo`, `1homo`, `hetero`).                    |
+| `majorfirst`             | Boolean indicating if the major allele is likely inherited first based on phased data. |
+| `excl_mean`              | Excluded rolling mean of `majorfirst_numeric` within a window.                   |
+| `phasesegmented`         | Final phased segment classification (`TRUE`/`FALSE`) indicating phase-consistent segments. |
+| `ALTallelefinal`         | Final classification of the mutated allele after incorporating phased genotype information. |
+| `ALTdosagefinal`         | Final dosage estimate of the alternate allele accounting for copy number and phasing. |
+
 
 ## Contributors
 - [Yilin Li]
