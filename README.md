@@ -21,8 +21,8 @@ Run the script as follows:
 ```bash
 Rscript alleleDoser.R \
   path/to/germline_variants.tsv \
-  path/to/segment_file.txt \
-  path/to/metadata.txt \
+  path/to/segment_file.tsv \
+  path/to/metadata.tsv \
   path/to/output_directory \
   patientID \
   path/to/normal_samples.txt \
@@ -178,7 +178,7 @@ The script generates a CSV file named `<patientID>.csv` in the specified output 
 
 
 ## Contributors
-- [Yilin Li]
+- Yilin Li
 - [Samuel Leppiniemi](https://github.com/SamuelLepp)
 
 ## License
