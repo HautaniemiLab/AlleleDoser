@@ -68,7 +68,7 @@ The segment file contains CNV information for each sample.
 
 ##### **Required Columns:**
 - **`sample`**: Sample ID.  
-- **`chr`**: Chromosome identifier (e.g., `1`, `2`, `X`, without the `chr` prefix).  
+- **`chr`**: Chromosome identifier.  
 - **`startpos`**: Start position of the CNV segment (genomic coordinate).  
 - **`endpos`**: End position of the CNV segment (genomic coordinate).  
 - **`nMinor`**: Minor allele copy number within the segment.  
@@ -76,12 +76,12 @@ The segment file contains CNV information for each sample.
 
 ##### **Example Segment File Format:**
 
-| sample            | chr  | startpos  | endpos    | nMinor | nMajor |
-|-------------------|------|-----------|-----------|--------|--------|
-| patient1_sample1  | 1    | 1000000   | 2000000   | 1      | 2      |
-| patient1_sample1  | 1    | 2000001   | 3000000   | 0      | 3      |
-| patient1_sample2  | 2    | 500000    | 1500000   | 1      | 1      |
-| patient1_sample3  | 2    | 1500001   | 2500000   | 2      | 2      |
+| sample            | chr     | startpos  | endpos    | nMinor | nMajor |
+|-------------------|---------|-----------|-----------|--------|--------|
+| patient1_sample1  | chr1    | 1000000   | 2000000   | 1      | 2      |
+| patient1_sample1  | chr1    | 2000001   | 3000000   | 0      | 3      |
+| patient1_sample2  | chr2    | 500000    | 1500000   | 1      | 1      |
+| patient1_sample3  | chr2    | 1500001   | 2500000   | 2      | 2      |
 
 ---
 
