@@ -178,7 +178,7 @@ The script generates a CSV file named `<patientID>.csv` in the specified output 
 
 
 ## Contributors
-- Yilin Li
+- [Yilin Li](https://github.com/yl-h)
 - [Samuel Leppiniemi](https://github.com/SamuelLepp)
 
 ## License
